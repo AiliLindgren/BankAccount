@@ -87,9 +87,13 @@ const account = {
   },
 
   exitAccount: function () {
-    alert(`You have exited your account. The window will close.`);
-    // This loads a blank url (the first argument) in the current window (the second argument) and then instantaneously closes the window. This works because when close() is called, the current window has been opened by javascript.
-    window.open("", "_self").close();
+    // The method window.open("", "_self").close(); loads a blank url (the first argument) in the current window (the second argument) and then instantaneously closes the window. This works because when close() is called, the current window has been opened by javascript.
+    let exit = confirm("Do you want to exit?");
+    if (exit) {
+      window.open("", "_self").close();
+    } else {
+      atm();
+    }
   },
 };
 
