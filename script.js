@@ -87,7 +87,7 @@ const account = {
   },
 
   exitAccount: function () {
-    // The method window.open("", "_self").close(); loads a blank url (the first argument) in the current window (the second argument) and then instantaneously closes the window. This works because when close() is called, the current window has been opened by javascript.
+    // The method window.open("", "_self").close(); loads a blank url (the first argument) in the current window (the second argument) and then instantaneously closes the window. This works because when close() is called, the current window has been opened by JS. Otherwise a window that has not been opened by JS can not be closed with JS, due to security reasons.
     let exit = confirm("Do you want to exit?");
     if (exit) {
       window.open("", "_self").close();
