@@ -9,7 +9,9 @@
       body {
         height: 100vh;
         display: flex;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
         background: linear-gradient(to top left, #26984a, #8ed596);
       }
       h1 {
@@ -21,10 +23,21 @@
         text-align: center;
         color: #ffffff;
       }
+      /* button {
+        width: 150px;
+        height: 50px;
+        background-color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        font-family: sans-serif;
+        font-size: 20px;
+      } */
     </style>
   </head>
   <body>
     <h1>JavaScript Second Assignment - Bank Account</h1>
+    <!-- The button is superfluous since the prompt window opens immediately and closes by exiting the account. -->
+    <!-- <button onclick="windowOpen()">Open ATM</button> -->
     <script src="script.js"></script>
   </body>
 </html>
