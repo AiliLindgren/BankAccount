@@ -15,7 +15,7 @@ const account = {
       "How much would you like to deposit? Enter a number in dollars."
     );
 
-    // If user clicks cancel-button, the atm() function gets called again and it all starts over. If the user clicks the ok-button or types in anything, the user-input gets parsed into a floating point number through the parseFloat() funtion.
+    // If user clicks cancel-button, the atm() function gets called again and it all starts over. If user clicks the ok-button or types in anything, the user-input gets parsed into a floating point number through the parseFloat() funtion.
     if (sumToDeposit === null) {
       atm();
     } else {
@@ -56,7 +56,7 @@ const account = {
       } else {
         this.balance -= sumToWithdraw;
         alert(
-          `You have withdrawn: ${sumToWithdraw} $\nBalance after deposit: ${this.balance} $`
+          `You have withdrawn: ${sumToWithdraw} $\nBalance after withdrawal: ${this.balance} $`
         );
       }
       atm();
@@ -78,7 +78,7 @@ const account = {
   },
 
   accountError: function () {
-    alert(`Not a valid number.\nAccount balance: ${this.balance} $`);
+    alert(`\nNot a valid number.\n\nAccount balance: ${this.balance} $`);
 
     // // Kommentar till mig själv: Först var detta en funktion med ett returvärde och utan alerten. Den fungerade ihop med while-looparna i deposit- och withdrawal-funktionerna.
     // return prompt(
