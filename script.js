@@ -22,7 +22,7 @@ const account = {
       sumToDeposit = parseFloat(sumToDeposit);
       // If the user-input is a falsy value or is less or equal to 0, the accountError() function with an error message gets called. Else, that is if the user has typed in a valid number (a number that is above 0), the number gets added to the current balance and the new balance is showed to the user.
       if (!sumToDeposit || sumToDeposit <= 0) {
-        this.accountError();
+        alert(`Enter a number above 0. The input must consist of digits only.`);
       } else {
         this.balance += sumToDeposit;
         alert(
@@ -52,7 +52,9 @@ const account = {
     } else {
       sumToWithdraw = parseFloat(sumToWithdraw);
       if (!sumToWithdraw || sumToWithdraw < 0 || sumToWithdraw > this.balance) {
-        this.accountError();
+        alert(
+          `Enter a number above 0 and no higher than your current balance: ${this.balance}. \nThe input must consist of digits only.`
+        );
       } else {
         this.balance -= sumToWithdraw;
         alert(
@@ -78,7 +80,9 @@ const account = {
   },
 
   accountError: function () {
-    alert(`\nNot a valid number.\n\nAccount balance: ${this.balance} $`);
+    alert(
+      `Not a valid input. \nSelect a choice. Enter the number of your choice (1, 2, 3 4, or 5.)`
+    );
 
     // // Kommentar till mig själv: Först var detta en funktion med ett returvärde och utan alerten. Den fungerade ihop med while-looparna i deposit- och withdrawal-funktionerna.
     // return prompt(
@@ -130,6 +134,7 @@ function atm() {
         account.exitAccount();
         break;
       default:
+        account.accountError();
         atm();
     }
   }
